@@ -6,8 +6,11 @@ import pandas as pd
 import numpy as np
 import argparse
 #import summary_functions 
+
 from summary_functions import (
-    petrol_L_per_100km, cost_per_km
+    petrol_L_per_hundred_km, 
+    cost_per_km, 
+    cost_per_hundred_km
     )
 
 # How do I import functions??
@@ -61,13 +64,14 @@ print(fuel['date'].describe())
 
 #tank = petrol_L_calc(fuel)
 #mean_tank_distance = mileage_calc(fuel)
-fuel_per_100km = petrol_L_per_100km(fuel)
+fuel_per_hundred_km = petrol_L_per_hundred_km(fuel)
 mean_price_per_km = cost_per_km(fuel)
+mean_price_per_hundred_km = cost_per_hundred_km(fuel)
 
 print(
-    "\naverage fuel consumed per 100km:", fuel_per_100km,
-    "\nAverage price ($) per kilometer:", mean_price_per_km[0],
-    "\nAverage price ($) per 100 kilometers:", mean_price_per_km[1]
+    "\naverage fuel consumed per 100km:", fuel_per_hundred_km,
+    "\nAverage price ($) per kilometer:", mean_price_per_km,
+    "\nAverage price ($) per 100 kilometers:", mean_price_per_hundred_km
     )
 
 # BOOM!
